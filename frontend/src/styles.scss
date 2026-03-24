@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+  --navy: #0f1629;
+  --navy2: #141c35;
+  --navy3: #1a2444;
+  --bg: #f0f2f8;
+  --white: #ffffff;
+  --red: #e2001a;
+  --red-dark: #b50015;
+  --red-light: rgba(226, 0, 26, 0.08);
+  --green: #16a34a;
+  --green-l: rgba(22, 163, 74, 0.1);
+  --orange: #d97706;
+  --orange-l: rgba(217, 119, 6, 0.1);
+  --blue: #1e40af;
+  --blue-l: rgba(30, 64, 175, 0.1);
+  --border: #e5e7eb;
+  --text: #111827;
+  --text2: #6b7280;
+  --text3: #9ca3af;
+  --font: 'Inter', system-ui, sans-serif;
+  --font-d: 'Rajdhani', sans-serif;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--red);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-d);
+  color: var(--text);
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: var(--r-md);
+  font-family: var(--font);
+  font-size: .875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .18s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-red {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(226, 0, 26, .3);
+}
+
+.btn-red:hover:not(:disabled) {
+  background: var(--red-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(226, 0, 26, .35);
+}
+
+.btn-red:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text2);
+  border: 1.5px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text2);
+}
+
+.btn-ghost:hover {
+  color: var(--red);
+}
+
+/* ── Card ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .06);
+}
+
+/* ── Form fields ── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field label {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text2);
+}
+
+.field input,
+.field select {
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  font-family: var(--font);
+  font-size: .9rem;
+  color: var(--text);
+  background: var(--white);
+  outline: none;
+  transition: border-color .18s, box-shadow .18s;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(226, 0, 26, .08);
+}
+
+.field input::placeholder {
+  color: var(--text3);
+}
+
+.field select option {
+  background: var(--white);
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.badge-best {
+  background: rgba(22, 163, 74, .1);
+  color: var(--green);
+  border: 1px solid rgba(22, 163, 74, .25);
+}
+
+.badge-good {
+  background: rgba(30, 64, 175, .1);
+  color: var(--blue);
+  border: 1px solid rgba(30, 64, 175, .2);
+}
+
+.badge-average {
+  background: rgba(217, 119, 6, .1);
+  color: var(--orange);
+  border: 1px solid rgba(217, 119, 6, .2);
+}
+
+.badge-poor {
+  background: rgba(226, 0, 26, .08);
+  color: var(--red);
+  border: 1px solid rgba(226, 0, 26, .2);
+}
+
+/* ── Spinner ── */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(255, 255, 255, .3);
+  border-top-color: #fff;
+  animation: spin .7s linear infinite;
+}
+
+.spinner-red {
+  border-color: var(--border);
+  border-top-color: var(--red);
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   HERO BANNER — navy blue section on every page
+   ═══════════════════════════════════════════════ */
+.hero-banner {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy3) 60%, #2a1040 100%);
+  padding: 40px 48px 80px !important;
+  min-height: 220px;
+}
+
+.hero-banner h1 {
+  font-family: var(--font-d);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.hero-banner h1 span {
+  color: var(--red);
+}
+
+.hero-banner p {
+  font-size: .9rem;
+  color: rgba(255, 255, 255, .55);
+  max-width: 580px;
+}
+
+/* ═══════════════════════════════════════════════
+   CARDS ON BLUE — pulls ALL page content wrappers
+   up onto the navy banner edge
+   ═══════════════════════════════════════════════ */
+.st-layout,
+.db-wrap,
+.hs-content,
+.st-content {
+  margin-top: -104px !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero-banner {
+    padding: 28px 20px 96px !important;
+    min-height: 180px;
+  }
+
+  .st-layout,
+  .db-wrap,
+  .hs-content,
+  .st-content {
+    margin-top: -44px !important;
+  }
+}
